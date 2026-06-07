@@ -5,6 +5,8 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
+        if len(s) != len(t):
+            return False
         s_sorted = sorted(s)
         t_sorted = sorted(t)
         return True if s_sorted == t_sorted else False

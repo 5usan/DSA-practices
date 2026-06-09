@@ -6,12 +6,12 @@ class Solution(object):
         :rtype: List[int]
         """
         temp_dist = {}
-        n = len(nums)
-        for i in range(n):
-            temp_dist[nums[i]] = i
-
-        for i in range(n):
-            compliment = target - nums[i]
+        for i, num in enumerate(nums):
+            temp_dist[num] = i
+            
+        print(temp_dist)
+        for i, value in enumerate(nums):
+            compliment = target - value
             if compliment in temp_dist and i != temp_dist[compliment]:
                 return [i, temp_dist[compliment]]
                 

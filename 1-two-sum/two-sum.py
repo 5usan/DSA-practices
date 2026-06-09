@@ -5,13 +5,17 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        num_map = {}
-        
-        for i, num in enumerate(nums):
-            complement = target - num
-            
-            if complement in num_map:
-                return [num_map[complement], i]
-                
-            num_map[num] = i 
-        return []
+        numMap = {}
+        n = len(nums)
+
+        # Build the hash table
+        for i in range(n):
+            numMap[nums[i]] = i
+
+        # Find the complement
+        for i in range(n):
+            complement = target - nums[i]
+            if complement in numMap and numMap[complement] != i:
+                return [i, numMap[complement]]
+
+        return []  # No solution found

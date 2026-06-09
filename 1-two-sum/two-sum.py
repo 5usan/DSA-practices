@@ -5,19 +5,14 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        # nums = [0,4,3,0]
-        numMap = {}
+        temp_dist = {}
         n = len(nums)
-
-        # Build the hash table
         for i in range(n):
-            numMap[nums[i]] = i
+            temp_dist[nums[i]] = i
 
-        # Find the complement
         for i in range(n):
-            complement = target - nums[i]
-            if complement in numMap and numMap[complement] != i:
-                return [i, numMap[complement]]
-
-        return []  # No solution found
-        
+            compliment = target - nums[i]
+            if compliment in temp_dist and i != temp_dist[compliment]:
+                return [i, temp_dist[compliment]]
+                
+        return []

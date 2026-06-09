@@ -6,9 +6,10 @@ class Solution(object):
         """
         output = {}
         for each in strs:
-            if "".join(sorted(each)) not in output:
-                output["".join(sorted(each))] = [each]
+            sorted_word = "".join(sorted(each))
+            if sorted_word not in output:
+                output[sorted_word] = [each]
             else:
-                output["".join(sorted(each))].append(each)
+                output[sorted_word].append(each)
 
         return output.values()       

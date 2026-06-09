@@ -5,10 +5,11 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+        
         temp_dist = {}
         for i, num in enumerate(nums):
             temp_dist[num] = i
-            
+
         print(temp_dist)
         for i, value in enumerate(nums):
             compliment = target - value
@@ -16,3 +17,5 @@ class Solution(object):
                 return [i, temp_dist[compliment]]
                 
         return []
+
+

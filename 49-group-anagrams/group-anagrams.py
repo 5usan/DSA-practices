@@ -4,11 +4,11 @@ class Solution(object):
         :type strs: List[str]
         :rtype: List[List[str]]
         """
-        o = {}
+        output = {}
         for each in strs:
-            if "".join(sorted(each)) not in o:
-                o["".join(sorted(each))] = [each]
+            if "".join(sorted(each)) not in output:
+                output["".join(sorted(each))] = [each]
             else:
-                o["".join(sorted(each))].append(each)
+                output["".join(sorted(each))].append(each)
 
-        return o.values()       
+        return output.values()       

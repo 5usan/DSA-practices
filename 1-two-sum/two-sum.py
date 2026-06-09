@@ -5,6 +5,7 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+        # nums = [0,4,3,0]
         numMap = {}
         n = len(nums)
 
@@ -19,3 +20,4 @@ class Solution(object):
                 return [i, numMap[complement]]
 
         return []  # No solution found
+        

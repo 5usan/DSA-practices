@@ -10,4 +10,3 @@ class Solution(object):
             if zero_cnt: nums[i] = 0 if c else prod
             else: nums[i] = prod // c
         return nums
-        

@@ -17,4 +17,3 @@ class Solution(object):
                 heapq.heappop(heap)
 
         return [i[1] for i in heap]
-        

@@ -5,6 +5,7 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
+
         occur = {}
         for num in nums:
             occur[num] = occur.get(num, 0) + 1

@@ -5,16 +5,12 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-
-        temp_dist = {}
-        for i, num in enumerate(nums):
-            temp_dist[num] = i
-
-        for i, value in enumerate(nums):
-            compliment = target - value
-            if compliment in temp_dist and i != temp_dist[compliment]:
-                return [i, temp_dist[compliment]]
-                
-        return []
-
-
+        hashmap = {}
+        for i, item in enumerate(nums):
+            hashmap[item] = i
+        for i, item in enumerate(nums):
+            temp = target - item
+            if temp in hashmap and hashmap[temp] != i:
+                return [i, hashmap[temp]]
+        
+        

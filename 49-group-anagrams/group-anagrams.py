@@ -4,12 +4,14 @@ class Solution(object):
         :type strs: List[str]
         :rtype: List[List[str]]
         """
-        output = {}
+        hashmap = {}
         for each in strs:
-            sorted_word = "".join(sorted(each))
-            if sorted_word not in output:
-                output[sorted_word] = [each]
+            temp = "".join(sorted(each))
+            if temp in hashmap:
+                hashmap[temp].append(each)
             else:
-                output[sorted_word].append(each)
-
-        return output.values()       
+                hashmap[temp] = [each]
+        result = []
+        for key, value in hashmap.items():
+            result.append(value)
+        return result

@@ -15,6 +15,5 @@ class Solution(object):
                 result[len(result) - 1] += 1
             else:
                 result.append(1)
-        print(result)
         return max(result)
                 

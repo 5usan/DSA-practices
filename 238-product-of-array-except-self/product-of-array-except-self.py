@@ -11,18 +11,16 @@ class Solution(object):
         """
         total_product = 1
         zero_element_count = 0
-        has_zero = False
         for num in nums:
             if num != 0:
                 total_product *= num
             else:
-                has_zero = True
                 zero_element_count += 1
 
         result = []
         if zero_element_count > 1:
             return [0] * len(nums)
-        if has_zero:
+        if zero_element_count == 1:
             for num in nums:
                 if num == 0:
                     result.append(total_product)

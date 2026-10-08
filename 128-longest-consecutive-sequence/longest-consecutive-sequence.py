@@ -8,7 +8,6 @@ class Solution(object):
         if(len(nums) == 0):
             return 0
         sorted_list = sorted(list(dict.fromkeys(nums)))
-        print(sorted_list)
         result = [1]
         for i in range(len(sorted_list)- 1):
             if sorted_list[i] + 1 == sorted_list[i+1]:

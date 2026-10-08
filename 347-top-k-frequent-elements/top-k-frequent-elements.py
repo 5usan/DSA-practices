@@ -5,16 +5,15 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
-
-        occur = {}
+        hashmap = {}
         for num in nums:
-            occur[num] = occur.get(num, 0) + 1
-
-        heap = []
-
-        for key in occur:
-            heapq.heappush(heap, (occur[key], key))
-            if len(heap) > k:
-                heapq.heappop(heap)
-
-        return [i[1] for i in heap]
+            if num in hashmap:
+                hashmap[num] += 1
+            else:
+                hashmap[num] = 1
+        top_K_frequent_tuples = sorted(hashmap.items(), key = lambda x : x[1], reverse = True)[:k]
+        top_k_element = []
+        for i in top_K_frequent_tuples:
+            top_k_element.append(i[0])
+        return top_k_element
+        

@@ -12,5 +12,6 @@ class Solution(object):
             temp = target - item
             if temp in hashmap and hashmap[temp] != i:
                 return [i, hashmap[temp]]
+        return []
         
         

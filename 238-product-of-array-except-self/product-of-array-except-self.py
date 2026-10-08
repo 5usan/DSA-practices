@@ -9,12 +9,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        # result = []
-        # for index , num in enumerate(nums):
-        #     product = int(self.prod(nums[:index]) * self.prod(nums[index + 1:]))
-        #     result.append(product)
-        # return result
-
         total_product = 1
         zero_element_count = 0
         has_zero = False
@@ -29,8 +23,6 @@ class Solution(object):
         if zero_element_count > 1:
             return [0] * len(nums)
         if has_zero:
-            # if zero_element_count >= len(nums) - 1 and len(nums) > 2:
-            #     return [0] * len(nums)
             for num in nums:
                 if num == 0:
                     result.append(total_product)

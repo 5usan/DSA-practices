@@ -9,6 +9,8 @@ class Solution(object):
         s = set()
         for i in range(length):
             current_element = nums[i]
+            if i > 0 and current_element == nums[i-1]:
+                continue
             l = i + 1
             r = length - 1
             while l < r:
